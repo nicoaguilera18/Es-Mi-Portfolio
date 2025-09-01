@@ -1,0 +1,122 @@
+/* ===== Body y contenedor ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 20px #bb86fc, 0 0 40px #bb86fc inset;
+}
+
+/* ===== Título ===== */
+h1 {
+  text-align: center;
+  color: #bb86fc;
+  text-shadow:
+    0 0 5px #bb86fc,
+    0 0 10px #bb86fc,
+    0 0 20px #9b67e5;
+}
+
+/* ===== Inputs y Botón ===== */
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  flex: 1 1 100px;
+  min-width: 0;
+  background: #2a2a2a;
+  color: #fff;
+  box-shadow: 0 0 5px #bb86fc, 0 0 10px #9b67e5 inset;
+  transition: 0.3s;
+}
+
+.input-container input:focus {
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc inset;
+}
+
+.input-container button {
+  background: #bb86fc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-container button:hover {
+  background: #9b67e5;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+/* ===== Lista de tareas ===== */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #2a2a2a;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 0 5px #bb86fc, 0 0 10px #9b67e5 inset;
+  transition: 0.3s;
+}
+
+li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+li:hover {
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc inset;
+}
+
+/* ===== Botón borrar ===== */
+.deleteBtn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 5px;
+  flex-shrink: 0;
+  box-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a inset;
+  transition: 0.3s;
+}
+
+.deleteBtn:hover {
+  box-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d inset;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 400px) {
+  .input-container input,
+  .input-container button {
+    flex: 1 1 100%;
+  }
+}

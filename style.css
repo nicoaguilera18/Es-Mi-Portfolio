@@ -1,0 +1,267 @@
+/* ===== General ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* ===== Títulos con estilo retro/neón ===== */
+h1, h2, h3 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Título principal */
+header h1 {
+  font-size: 32px;
+  margin: 0;
+  color: #f3e304;
+  text-shadow:
+    0 0 5px #8a2be2,
+    0 0 10px #e7c609,
+    0 0 20px #8a2be2,
+    0 0 40px #e7be08,
+    0 0 80px #8a2be2;
+  text-align: center;
+}
+
+/* Secciones h2 con neón amarillo */
+section h2 {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffcc00;
+  text-shadow: 
+    0 0 5px #ffcc00,
+    0 0 10px #ffcc00,
+    0 0 20px #ffcc00,
+    0 0 40px #ffcc00;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* ===== Navbar ===== */
+nav {
+  background: #142850;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+}
+
+/* ===== Secciones ===== */
+section {
+  padding: 30px 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ===== Sobre mí ===== */
+.sobre-mi-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sobre-mi-foto {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #00ff99;
+  box-shadow: 0 0 10px #00ff99;
+}
+
+.sobre-mi-list {
+  list-style: none;
+  padding: 0;
+  flex: 1 1 200px;
+}
+
+.sobre-mi-list li {
+  background: #1a1a1a;
+  margin: 5px 0;
+  padding: 10px;
+  border-left: 4px solid #00ff99;
+  font-size: 14px;
+}
+
+/* ===== Experiencia y Qué podés pedirme ===== */
+#experiencia ul,
+#ofrezco ul {
+  list-style: none;
+  padding: 0;
+}
+
+#experiencia ul li,
+#ofrezco ul li {
+  background: #1a1a1a;
+  margin: 5px 0;
+  padding: 10px;
+  border-left: 4px solid #00ff99;
+  font-size: 14px;
+}
+
+/* ===== Proyectos ===== */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #00ff99;
+  box-shadow: 0 0 10px #00ff99;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* ===== ToDo List dentro de proyecto ===== */
+.todo-container {
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #00ff99 inset, 0 0 20px #00ff99;
+}
+
+.todo-container .input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.todo-container input,
+.todo-container button {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  flex: 1 1 80px;
+  background: #222;
+  color: #fff;
+  box-shadow: 0 0 5px #00ff99 inset;
+  transition: 0.3s;
+}
+
+.todo-container input:focus {
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc inset;
+}
+
+.todo-container button {
+  background: #00ff99;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.todo-container button:hover {
+  background: #00e6a0;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+.todo-container ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.todo-container li {
+  background: #222;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-container li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-container .deleteBtn {
+  background: red;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+/* ===== Calculadora de presupuestos ===== */
+.budget-container {
+  background: #222;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #00ff99 inset, 0 0 20px #00ff99;
+}
+
+.budget-container input,
+.budget-container select,
+.budget-container button {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 0 5px #00ff99 inset;
+}
+
+.budget-container button {
+  background: #00ff99;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.budget-container button:hover {
+  background: #00e6a0;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+.budget-container p {
+  background: #111;
+  padding: 8px;
+  border-radius: 5px;
+  border-left: 4px solid #00ff99;
+  margin: 5px 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 15px;
+  font-size: 12px;
+}
+
+/* ===== Animaciones ===== */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00; }
+  100% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 60px #ffcc00; }
+}

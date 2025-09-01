@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mi Portfolio</h1>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#experiencia">Experiencia en</a>
+      <a href="#ofrezco">Qué podés pedirme</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+<section id="sobre-mi">
+  <h2>Sobre mí</h2>
+  <div class="sobre-mi-container">
+    <img src="https://tu-usuario.github.io/tu-repo/tu-foto.jpg" alt="Foto de Nico" class="sobre-mi-foto">
+    <ul class="sobre-mi-list">
+      <li>💿 Buenas, soy Nico, estudiante de Ingeniería en Sistemas de Información con un gran interés en la programación y el desarrollo de software.</li>
+      <li>💿 Estoy construyendo mis primeros proyectos mientras aprendo cada vez más.</li>
+      <li>💿 Me interesa el desarrollo web, la lógica de programación y la automatización de procesos.</li>
+    </ul>
+  </div>
+</section>
+
+  <section id="experiencia">
+    <h2>Experiencia en:</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript (básico)</li>
+      <li>Python</li>
+      <li>C++</li>
+      <li>Arduino</li>
+      <li>Proteus</li>
+    </ul>
+  </section>
+
+  <section id="ofrezco">
+    <h2>Qué podés pedirme</h2>
+    <ul>
+      <li>Desarrollo de páginas web básicas</li>
+      <li>Automatización de tareas con Python</li>
+      <li>Asistencia en lógica de programación y algoritmos</li>
+      <li>Resolución de problemas en C++ y otros lenguajes</li>
+    </ul>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="projects">
+      <!-- To-Do List -->
+      <div class="project-card">
+        <h3>To-Do List</h3>
+        <p>Una lista de tareas interactiva con fecha y hora, guardando los datos localmente.</p>
+        <div class="todo-container">
+          <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Escribe tu tarea...">
+            <input type="date" id="taskDate">
+            <input type="time" id="taskTime">
+            <button id="addBtn">Agregar</button>
+          </div>
+          <ul id="taskList"></ul>
+        </div>
+      </div>
+
+      <!-- Calculadora de Presupuestos -->
+      <div class="project-card">
+        <h3>Calculadora de Presupuestos</h3>
+        <p>Calcula el costo total de productos/servicios, cantidad y aplica IVA.</p>
+        <p class="small-text">Para ver la versión completa entrar al <a href="https://github.com/tu-usuario/tu-repo" target="_blank">GitHub</a></p>
+        <div class="budget-container">
+          <div class="input-container">
+            <input type="number" id="productPrice" placeholder="Precio unitario">
+            <input type="number" id="quantity" placeholder="Cantidad">
+            <input type="number" id="tax" placeholder="IVA (%)">
+            <button id="calculateBtn">Calcular</button>
+            <button id="clearBtn">Limpiar</button>
+          </div>
+          <div class="results">
+            <p>Total: <span id="totalCost">0</span></p>
+            <p>IVA: <span id="taxAmount">0</span></p>
+            <p>Total con IVA: <span id="totalWithTax">0</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Podés escribirme a: <a href="mailto:nicolasaguilera7914@gmail.com">nicolasaguilera7914@gmail.com</a></p>
+    <p>O encontrarme en <a href="https://www.linkedin.com/in/leandro-nicolas-aguilera-danese-78b485176" target="_blank">LinkedIn</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 - Mi Portfolio</p>
+  </footer>
+
+  <script src="todo.js"></script>
+  <script src="budget.js"></script>
+</body>
+</html>
