@@ -1,37 +1,32 @@
-// Seleccionamos los elementos del DOM
 const taskInput = document.getElementById("taskInput");
 const taskDate = document.getElementById("taskDate");
 const taskTime = document.getElementById("taskTime");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 
-// Cargar tareas desde localStorage al iniciar
+/* Cargar tareas */
 window.addEventListener("DOMContentLoaded", () => {
-  const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  savedTasks.forEach(task => addTaskToDOM(task.text, task.date, task.time, task.completed));
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach(t => addTask(t.text, t.date, t.time, t.completed));
 });
 
-// Función para agregar una tarea al DOM
-function addTaskToDOM(text, date, time, completed = false) {
+/* Agregar tarea */
+function addTask(text, date, time, completed = false) {
   const li = document.createElement("li");
-  li.className = completed ? "completed" : "";
+  if (completed) li.classList.add("completed");
 
   li.innerHTML = `
-    <span>${text} ${date ? "- " + date : ""} ${time ? "- " + time : ""}</span>
-    <div>
-      <button class="completeBtn">✔</button>
-      <button class="deleteBtn">✖</button>
-    </div>
+    <span>${text} ${date ? " - " + date : ""} ${time ? " " + time : ""}</span>
+    <button class="deleteBtn">✖</button>
   `;
 
-  // Marcar como completada
-  li.querySelector(".completeBtn").addEventListener("click", () => {
+  li.addEventListener("click", () => {
     li.classList.toggle("completed");
     saveTasks();
   });
 
-  // Eliminar tarea
-  li.querySelector(".deleteBtn").addEventListener("click", () => {
+  li.querySelector(".deleteBtn").addEventListener("click", (e) => {
+    e.stopPropagation();
     li.remove();
     saveTasks();
   });
@@ -39,40 +34,32 @@ function addTaskToDOM(text, date, time, completed = false) {
   taskList.appendChild(li);
 }
 
-// Guardar tareas en localStorage
+/* Guardar tareas */
 function saveTasks() {
   const tasks = [];
-  taskList.querySelectorAll("li").forEach(li => {
-    const span = li.querySelector("span");
-    const parts = span.textContent.split(" - ");
+  document.querySelectorAll("#taskList li").forEach(li => {
+    const text = li.querySelector("span").textContent;
     tasks.push({
-      text: parts[0],
-      date: parts[1] || "",
-      time: parts[2] || "",
+      text: text,
       completed: li.classList.contains("completed")
     });
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Evento al hacer clic en "Agregar"
+/* Evento agregar */
 addBtn.addEventListener("click", () => {
-  const text = taskInput.value.trim();
-  const date = taskDate.value;
-  const time = taskTime.value;
+  if (taskInput.value.trim() === "") return;
 
-  if (text === "") return;
-
-  addTaskToDOM(text, date, time);
+  addTask(taskInput.value, taskDate.value, taskTime.value);
   saveTasks();
 
-  // Limpiar inputs
   taskInput.value = "";
   taskDate.value = "";
   taskTime.value = "";
 });
 
-// También permitir agregar con Enter
-taskInput.addEventListener("keypress", (e) => {
+/* Enter */
+taskInput.addEventListener("keypress", e => {
   if (e.key === "Enter") addBtn.click();
 });
