@@ -8,74 +8,73 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
   <header>
     <h1>Mi Portfolio</h1>
     <nav>
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="#experiencia">Experiencia en</a>
-      <a href="#ofrezco">Qué podés pedirme</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#ofrezco">Servicios</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
+  <!-- SOBRE MI -->
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
     <div class="sobre-mi-container">
       <img src="img/mi_foto.jpg" alt="Foto de Nico" class="sobre-mi-foto">
       <ul class="sobre-mi-list">
-        <li>💿 Buenas, soy Nico, estudiante de Ingeniería en Sistemas de Información con un gran interés en la programación y el desarrollo de software.</li>
-        <li>💿 Estoy construyendo mis primeros proyectos mientras aprendo cada vez más.</li>
-        <li>💿 Me interesa el desarrollo web, la lógica de programación y la automatización de procesos.</li>
+        <li>💿 Hola, soy Nico, estudiante de Ingeniería en Sistemas de Información.</li>
+        <li>💿 Me especializo en desarrollo web y automatización de procesos.</li>
+        <li>💿 Mi objetivo es ayudar a personas y negocios a ahorrar tiempo con soluciones simples.</li>
       </ul>
     </div>
   </section>
 
+  <!-- EXPERIENCIA -->
   <section id="experiencia">
-    <h2>Experiencia en:</h2>
+    <h2>Experiencia en</h2>
     <ul>
       <li>HTML & CSS</li>
       <li>JavaScript (básico)</li>
-      <li>Python</li>
+      <li>Python (automatización)</li>
       <li>C++</li>
       <li>Arduino</li>
       <li>Proteus</li>
     </ul>
   </section>
 
-  <!-- SECCIÓN ACTUALIZADA -->
+  <!-- SERVICIOS / OFREZCO -->
   <section id="ofrezco">
-    <h2>Trabajo freelance y automatización</h2>
-
-    <p class="freelance-text">
-      Desarrollo soluciones simples y prácticas para automatizar tareas,
-      organizar información y ahorrar tiempo. Trabajo con herramientas web
-      y scripts a medida, adaptados a la necesidad de cada cliente.
-    </p>
-
-    <ul class="freelance-list">
-      <li>Automatización de cálculos y presupuestos</li>
-      <li>Herramientas para organizar tareas, clientes o gastos</li>
-      <li>Páginas web simples y funcionales</li>
-      <li>Scripts personalizados en Python o JavaScript</li>
-      <li>Asistencia en lógica de programación y algoritmos</li>
+    <h2>Qué puedo hacer por vos</h2>
+    <ul>
+      <li>🌐 Desarrollo de páginas web simples y portfolios</li>
+      <li>⚙ Automatización de tareas repetitivas con Python</li>
+      <li>📊 Calculadoras de costos, presupuestos y control básico</li>
+      <li>🧠 Asistencia en lógica de programación y algoritmos</li>
     </ul>
 
-    <p class="freelance-note">
-      Si tenés un proceso repetitivo o una tarea que te lleva tiempo,
-      probablemente se pueda automatizar.
+    <!-- CTA -->
+    <p class="cta-text">
+      ¿Necesitás una web simple o automatizar una tarea repetitiva?<br>
+      <strong>Escribime y vemos tu idea sin compromiso.</strong>
     </p>
   </section>
 
+  <!-- PROYECTOS -->
   <section id="proyectos">
     <h2>Proyectos</h2>
+
     <div class="projects">
-      
-      <!-- To-Do List -->
+
+      <!-- TO DO LIST -->
       <div class="project-card">
         <h3>To-Do List</h3>
-        <p>Una lista de tareas interactiva con fecha y hora, guardando los datos localmente.</p>
+        <p>Lista de tareas con fecha y hora, guardado local en el navegador.</p>
+
         <div class="todo-container">
           <div class="input-container">
             <input type="text" id="taskInput" placeholder="Escribe tu tarea...">
@@ -87,37 +86,54 @@
         </div>
       </div>
 
-      <!-- Calculadora de Presupuestos -->
+      <!-- CALCULADORA -->
       <div class="project-card">
         <h3>Calculadora de Presupuestos</h3>
-        <p>Calcula el costo total de productos/servicios, cantidad y aplica IVA.</p>
+        <p>Cálculo de costos, cantidades e IVA.</p>
         <p class="small-text">
-          Para ver la versión completa entrar al 
-          <a href="https://github.com/tu-usuario/tu-repo" target="_blank">GitHub</a>
+          Versión completa disponible en GitHub
         </p>
+
         <div class="budget-container">
-          <div class="input-container">
-            <input type="number" id="productPrice" placeholder="Precio unitario">
-            <input type="number" id="quantity" placeholder="Cantidad">
-            <input type="number" id="tax" placeholder="IVA (%)">
-            <button id="calculateBtn">Calcular</button>
-            <button id="clearBtn">Limpiar</button>
-          </div>
-          <div class="results">
-            <p>Total: <span id="totalCost">0</span></p>
-            <p>IVA: <span id="taxAmount">0</span></p>
-            <p>Total con IVA: <span id="totalWithTax">0</span></p>
-          </div>
+          <input type="number" id="productPrice" placeholder="Precio unitario">
+          <input type="number" id="quantity" placeholder="Cantidad">
+          <input type="number" id="tax" placeholder="IVA (%)">
+          <button id="calculateBtn">Calcular</button>
+          <button id="clearBtn">Limpiar</button>
+
+          <p>Total: <span id="totalCost">0</span></p>
+          <p>IVA: <span id="taxAmount">0</span></p>
+          <p>Total con IVA: <span id="totalWithTax">0</span></p>
         </div>
+      </div>
+
+      <!-- ECOMMERCE EN DESARROLLO -->
+      <div class="project-card">
+        <h3>E-commerce de Ropa</h3>
+        <p>
+          Proyecto web con sistema de productos, usuarios y base de datos.
+        </p>
+        <p>
+          🛠 <strong>Estado:</strong> En desarrollo (entorno local)
+        </p>
+        <p class="small-text">
+          Proyecto más avanzado, actualmente sin deploy público.
+        </p>
       </div>
 
     </div>
   </section>
 
+  <!-- CONTACTO -->
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>Podés escribirme a: <a href="mailto:nicolasaguilera7914@gmail.com">nicolasaguilera7914@gmail.com</a></p>
-    <p>O encontrarme en <a href="https://www.linkedin.com/in/leandro-nicolas-aguilera-danese-78b485176" target="_blank">LinkedIn</a></p>
+    <p>Email: <a href="mailto:nicolasaguilera7914@gmail.com">nicolasaguilera7914@gmail.com</a></p>
+    <p>
+      LinkedIn:
+      <a href="https://www.linkedin.com/in/leandro-nicolas-aguilera-danese-78b485176" target="_blank">
+        Ver perfil
+      </a>
+    </p>
   </section>
 
   <footer>
