@@ -1,30 +1,64 @@
-const calcBtn = document.getElementById("calcBtn");
+// ==========================
+// ELEMENTOS DEL DOM
+// ==========================
+const priceInput = document.getElementById("productPrice");
+const qtyInput = document.getElementById("quantity");
+const taxInput = document.getElementById("tax");
+
+const calculateBtn = document.getElementById("calculateBtn");
 const clearBtn = document.getElementById("clearBtn");
-const productPrice = document.getElementById("productPrice");
-const productQty = document.getElementById("productQty");
-const iva = document.getElementById("iva");
-const budgetList = document.getElementById("budgetList");
 
-calcBtn.addEventListener("click", () => {
-  const price = parseFloat(productPrice.value);
-  const qty = parseInt(productQty.value);
-  const ivaPercent = parseFloat(iva.value);
+const totalCostSpan = document.getElementById("totalCost");
+const taxAmountSpan = document.getElementById("taxAmount");
+const totalWithTaxSpan = document.getElementById("totalWithTax");
 
-  if (isNaN(price) || isNaN(qty) || isNaN(ivaPercent)) return;
+// ==========================
+// CALCULAR PRESUPUESTO
+// ==========================
+calculateBtn.addEventListener("click", calculateBudget);
 
-  const subtotal = price * qty;
-  const ivaAmount = subtotal * (ivaPercent / 100);
-  const total = subtotal + ivaAmount;
+function calculateBudget() {
+  const price = parseFloat(priceInput.value);
+  const quantity = parseInt(qtyInput.value);
+  const taxPercent = parseFloat(taxInput.value);
 
-  const li = document.createElement("li");
-  li.textContent = `Cantidad: ${qty}, Precio unitario: $${price.toFixed(2)}, IVA: $${ivaAmount.toFixed(2)}, Total: $${total.toFixed(2)}`;
-  budgetList.appendChild(li);
+  if (isNaN(price) || isNaN(quantity) || isNaN(taxPercent)) {
+    alert("Por favor completá todos los campos correctamente.");
+    return;
+  }
 
-  productPrice.value = "";
-  productQty.value = "";
-  iva.value = "21";
-});
+  if (price < 0 || quantity <= 0 || taxPercent < 0) {
+    alert("Los valores ingresados no son válidos.");
+    return;
+  }
 
-clearBtn.addEventListener("click", () => {
-  budgetList.innerHTML = "";
-});
+  const total = price * quantity;
+  const taxAmount = total * (taxPercent / 100);
+  const totalWithTax = total + taxAmount;
+
+  totalCostSpan.textContent = formatCurrency(total);
+  taxAmountSpan.textContent = formatCurrency(taxAmount);
+  totalWithTaxSpan.textContent = formatCurrency(totalWithTax);
+}
+
+// ==========================
+// LIMPIAR RESULTADOS
+// ==========================
+clearBtn.addEventListener("click", clearBudget);
+
+function clearBudget() {
+  priceInput.value = "";
+  qtyInput.value = "";
+  taxInput.value = "";
+
+  totalCostSpan.textContent = "0";
+  taxAmountSpan.textContent = "0";
+  totalWithTaxSpan.textContent = "0";
+}
+
+// ==========================
+// FORMATO MONEDA
+// ==========================
+function formatCurrency(value) {
+  return `$${value.toFixed(2)}`;
+}

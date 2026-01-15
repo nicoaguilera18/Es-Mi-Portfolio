@@ -1,189 +1,263 @@
-/* ===== General ===== */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* =====================
+   RESET BÁSICO
+===================== */
+* {
   margin: 0;
   padding: 0;
-  background: #0d0d0d;
-  color: #f0f0f0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #0f0f0f;
+  color: #eaeaea;
   line-height: 1.6;
 }
 
-/* ===== Títulos retro/neón ===== */
-h1, h2, h3 {
-  font-family: 'Press Start 2P', cursive;
+/* =====================
+   LINKS
+===================== */
+a {
+  color: #00ff99;
+  text-decoration: none;
 }
 
-/* ===== Header ===== */
-header h1 {
-  font-size: 32px;
-  margin: 0;
-  color: #f3e304;
+a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   HEADER / NAV
+===================== */
+header {
+  padding: 30px 20px 15px;
   text-align: center;
-  text-shadow:
-    0 0 5px #8a2be2,
-    0 0 10px #e7c609,
-    0 0 20px #8a2be2,
-    0 0 40px #e7be08;
 }
 
-/* ===== Navbar ===== */
+header h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 28px;
+  color: #00ff99;
+  margin-bottom: 20px;
+}
+
 nav {
-  background: #142850;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  padding: 12px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  gap: 18px;
 }
 
 nav a {
-  color: #ffffff;
-  text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  font-size: 14px;
 }
 
-nav a:hover {
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc;
-}
-
-/* ===== Secciones ===== */
-section {
-  padding: 30px 15px;
-  max-width: 900px;
+/* =====================
+   SECCIONES
+===================== */
+.section {
+  padding: 70px 20px;
+  max-width: 1100px;
   margin: auto;
 }
 
-section h2 {
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
+  margin-bottom: 15px;
   text-align: center;
-  color: #ffcc00;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px #ffcc00;
+  color: #00ff99;
 }
 
-/* ===== Sobre mí ===== */
+.section-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  color: #cfcfcf;
+  font-size: 15px;
+}
+
+/* =====================
+   SOBRE MÍ
+===================== */
 .sobre-mi-container {
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  align-items: flex-start;
   flex-wrap: wrap;
-  align-items: center;
 }
 
 .sobre-mi-foto {
-  width: 150px;
-  border-radius: 10px;
+  width: 160px;
+  border-radius: 14px;
   border: 2px solid #00ff99;
-  box-shadow: 0 0 10px #00ff99;
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.4);
 }
 
 .sobre-mi-list {
   list-style: none;
-  padding: 0;
   flex: 1;
 }
 
 .sobre-mi-list li {
   background: #1a1a1a;
-  margin-bottom: 8px;
-  padding: 10px;
+  margin-bottom: 12px;
+  padding: 14px 16px;
   border-left: 4px solid #00ff99;
   font-size: 14px;
 }
 
-/* ===== Experiencia y Servicios ===== */
-#experiencia ul,
-#ofrezco ul {
-  list-style: none;
-  padding: 0;
-}
-
-#experiencia li,
-#ofrezco li {
-  background: #1a1a1a;
-  margin: 6px 0;
-  padding: 10px;
-  border-left: 4px solid #00ff99;
-  font-size: 14px;
-}
-
-/* ===== CTA ===== */
-.cta-text {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 14px;
-  background: #111;
-  padding: 15px;
-  border-radius: 10px;
-  border: 2px solid #00ff99;
-  box-shadow: 0 0 10px #00ff99;
-}
-
-/* ===== Proyectos ===== */
-.projects {
+/* =====================
+   SERVICIOS / FREELANCE
+===================== */
+.servicios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.servicio-card {
+  background: #161616;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #262626;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 255, 153, 0.25);
+}
+
+.servicio-card h3 {
+  color: #00ff99;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.servicio-card p {
+  font-size: 14px;
+  color: #d0d0d0;
+  margin-bottom: 15px;
+}
+
+.servicio-card ul {
+  list-style: none;
+}
+
+.servicio-card ul li {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #bfbfbf;
+}
+
+/* =====================
+   CTA
+===================== */
+.cta {
+  background: linear-gradient(135deg, #00ff99, #00cc7a);
+  color: #0f0f0f;
+  text-align: center;
+  padding: 55px 25px;
+  border-radius: 22px;
+  margin-top: 70px;
+}
+
+.cta h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.cta a {
+  background: #0f0f0f;
+  color: #00ff99;
+  padding: 14px 34px;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta a:hover {
+  background: #1a1a1a;
+}
+
+/* =====================
+   PROYECTOS
+===================== */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 45px;
 }
 
 .project-card {
-  background: #111;
-  padding: 20px;
-  border-radius: 12px;
-  border: 2px solid #00ff99;
-  box-shadow: 0 0 10px #00ff99;
+  background: #161616;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #262626;
 }
 
-/* ===== Texto chico ===== */
-.small-text {
-  font-size: 11px;
-  opacity: 0.7;
+.project-card h3 {
+  color: #00ff99;
+  margin-bottom: 8px;
 }
 
-/* ===== ToDo List ===== */
+.project-card p {
+  font-size: 14px;
+  color: #cfcfcf;
+}
+
+/* =====================
+   TODO APP
+===================== */
 .todo-container {
-  background: #222;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .todo-container .input-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .todo-container input,
 .todo-container button {
-  flex: 1;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: none;
-  background: #111;
+  background: #0f0f0f;
   color: #fff;
 }
 
 .todo-container button {
   background: #00ff99;
-  cursor: pointer;
+  color: #0f0f0f;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .todo-container ul {
   list-style: none;
-  padding: 0;
-  margin-top: 10px;
 }
 
 .todo-container li {
-  background: #111;
+  background: #1a1a1a;
   margin-bottom: 6px;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -194,46 +268,54 @@ section h2 {
   opacity: 0.6;
 }
 
-.deleteBtn {
-  background: red;
-  border: none;
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
+.todo-container button.completeBtn {
+  background: #00cc7a;
+  margin-right: 5px;
 }
 
-/* ===== Calculadora ===== */
+.todo-container button.deleteBtn {
+  background: #ff4d4d;
+}
+
+/* =====================
+   BUDGET
+===================== */
 .budget-container {
-  background: #222;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .budget-container input,
 .budget-container button {
   width: 100%;
   padding: 8px;
-  margin: 5px 0;
-  border-radius: 5px;
+  margin-bottom: 8px;
+  border-radius: 6px;
   border: none;
+  background: #0f0f0f;
+  color: #fff;
 }
 
 .budget-container button {
   background: #00ff99;
+  color: #0f0f0f;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* ===== Footer ===== */
-footer {
+.budget-container p {
   background: #1a1a1a;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
   text-align: center;
-  padding: 15px;
-  font-size: 12px;
-<<<<<<< HEAD
+  padding: 30px 15px;
+  background: #0b0b0b;
+  font-size: 13px;
+  color: #888;
 }
-=======
-}
->>>>>>> 715d13d086050519c6331c564bbabcafa0cfde2f

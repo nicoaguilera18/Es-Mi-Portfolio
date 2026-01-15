@@ -3,144 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portfolio</title>
+  <title>Nico Aguilera | Automatización y Sistemas Simples</title>
+
+  <!-- Fuente retro -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-
 <body>
-  <header>
-    <h1>Mi Portfolio</h1>
-    <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#ofrezco">Servicios</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
 
-  <!-- SOBRE MI -->
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <div class="sobre-mi-container">
-      <img src="img/mi_foto.jpg" alt="Foto de Nico" class="sobre-mi-foto">
-      <ul class="sobre-mi-list">
-        <li>💿 Hola, soy Nico, estudiante de Ingeniería en Sistemas de Información.</li>
-        <li>💿 Me especializo en desarrollo web y automatización de procesos.</li>
-        <li>💿 Mi objetivo es ayudar a personas y negocios a ahorrar tiempo con soluciones simples.</li>
+<header>
+  <h1>Nico Aguilera</h1>
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#experiencia">Conocimientos</a>
+    <a href="#ofrezco">Trabajo freelance</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<!-- =====================
+     SOBRE MÍ
+===================== -->
+<section id="sobre-mi" class="section">
+  <h2 class="section-title">Sobre mí</h2>
+
+  <div class="sobre-mi-container">
+    <img src="img/mi_foto.jpg" alt="Foto de Nico" class="sobre-mi-foto">
+
+    <ul class="sobre-mi-list">
+      <li>👋 Hola, soy Nico, estudiante de Ingeniería en Sistemas de Información.</li>
+      <li>💻 Me enfoco en crear soluciones simples que ayuden a organizar y ahorrar tiempo.</li>
+      <li>📈 Trabajo con personas y negocios chicos que quieren mejorar sus procesos.</li>
+      <li>🚀 Estoy en crecimiento constante y cada proyecto suma experiencia real.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =====================
+     EXPERIENCIA
+===================== -->
+<section id="experiencia" class="section">
+  <h2 class="section-title">Conocimientos</h2>
+
+  <ul class="sobre-mi-list">
+    <li>HTML & CSS (páginas simples y funcionales)</li>
+    <li>JavaScript (lógica, automatización, herramientas web)</li>
+    <li>Python (scripts y automatización)</li>
+    <li>C++ (lógica y estructuras)</li>
+    <li>Automatización de tareas repetitivas</li>
+    <li>Arduino / lógica de sistemas</li>
+  </ul>
+</section>
+
+<!-- =====================
+     TRABAJO FREELANCE
+===================== -->
+<section id="ofrezco" class="section">
+  <h2 class="section-title">Trabajo freelance y automatización</h2>
+
+  <p class="section-subtitle">
+    Ayudo a negocios chicos y personas comunes a organizarse mejor
+    usando automatización y sistemas simples.
+  </p>
+
+  <div class="servicios-grid">
+
+    <div class="servicio-card">
+      <h3>⚙️ Automatización</h3>
+      <p>Automatizo tareas repetitivas para ahorrar tiempo.</p>
+      <ul>
+        <li>Procesos manuales</li>
+        <li>Archivos y datos</li>
+        <li>Tareas diarias</li>
       </ul>
     </div>
-  </section>
 
-  <!-- EXPERIENCIA -->
-  <section id="experiencia">
-    <h2>Experiencia en</h2>
-    <ul>
-      <li>HTML & CSS</li>
-      <li>JavaScript (básico)</li>
-      <li>Python (automatización)</li>
-      <li>C++</li>
-      <li>Arduino</li>
-      <li>Proteus</li>
-    </ul>
-  </section>
-
-  <!-- SERVICIOS / OFREZCO -->
-  <section id="ofrezco">
-    <h2>Qué puedo hacer por vos</h2>
-    <ul>
-      <li>🌐 Desarrollo de páginas web simples y portfolios</li>
-      <li>⚙ Automatización de tareas repetitivas con Python</li>
-      <li>📊 Calculadoras de costos, presupuestos y control básico</li>
-      <li>🧠 Asistencia en lógica de programación y algoritmos</li>
-    </ul>
-
-    <!-- CTA -->
-    <p class="cta-text">
-      ¿Necesitás una web simple o automatizar una tarea repetitiva?<br>
-      <strong>Escribime y vemos tu idea sin compromiso.</strong>
-    </p>
-  </section>
-
-  <!-- PROYECTOS -->
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-
-    <div class="projects">
-
-      <!-- TO DO LIST -->
-      <div class="project-card">
-        <h3>To-Do List</h3>
-        <p>Lista de tareas con fecha y hora, guardado local en el navegador.</p>
-
-        <div class="todo-container">
-          <div class="input-container">
-            <input type="text" id="taskInput" placeholder="Escribe tu tarea...">
-            <input type="date" id="taskDate">
-            <input type="time" id="taskTime">
-            <button id="addBtn">Agregar</button>
-          </div>
-          <ul id="taskList"></ul>
-        </div>
-      </div>
-
-      <!-- CALCULADORA -->
-      <div class="project-card">
-        <h3>Calculadora de Presupuestos</h3>
-        <p>Cálculo de costos, cantidades e IVA.</p>
-        <p class="small-text">
-          Versión completa disponible en GitHub
-        </p>
-
-        <div class="budget-container">
-          <input type="number" id="productPrice" placeholder="Precio unitario">
-          <input type="number" id="quantity" placeholder="Cantidad">
-          <input type="number" id="tax" placeholder="IVA (%)">
-          <button id="calculateBtn">Calcular</button>
-          <button id="clearBtn">Limpiar</button>
-
-          <p>Total: <span id="totalCost">0</span></p>
-          <p>IVA: <span id="taxAmount">0</span></p>
-          <p>Total con IVA: <span id="totalWithTax">0</span></p>
-        </div>
-      </div>
-
-      <!-- ECOMMERCE EN DESARROLLO -->
-      <div class="project-card">
-        <h3>E-commerce de Ropa</h3>
-        <p>
-          Proyecto web con sistema de productos, usuarios y base de datos.
-        </p>
-        <p>
-          🛠 <strong>Estado:</strong> En desarrollo (entorno local)
-        </p>
-        <p class="small-text">
-          Proyecto más avanzado, actualmente sin deploy público.
-        </p>
-      </div>
-
+    <div class="servicio-card">
+      <h3>🧠 Sistemas simples</h3>
+      <p>Herramientas chicas para organizar mejor el trabajo.</p>
+      <ul>
+        <li>Control básico</li>
+        <li>Organización interna</li>
+        <li>Soluciones a medida</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Email: <a href="mailto:nicolasaguilera7914@gmail.com">nicolasaguilera7914@gmail.com</a></p>
-    <p>
-      LinkedIn:
-      <a href="https://www.linkedin.com/in/leandro-nicolas-aguilera-danese-78b485176" target="_blank">
-        Ver perfil
-      </a>
-    </p>
-  </section>
+    <div class="servicio-card">
+      <h3>🌐 Páginas web</h3>
+      <p>Páginas claras, livianas y fáciles de usar.</p>
+      <ul>
+        <li>Presentación personal</li>
+        <li>Servicios</li>
+        <li>Contacto directo</li>
+      </ul>
+    </div>
 
-  <footer>
-    <p>© 2025 - Mi Portfolio</p>
-  </footer>
+  </div>
 
-  <script src="todo.js"></script>
-  <script src="budget.js"></script>
+  <div class="cta">
+    <h2>¿Tenés algo que se podría simplificar?</h2>
+    <p>Contame tu problema y vemos si se puede automatizar o mejorar.</p>
+    <a href="#contacto">Hablemos</a>
+  </div>
+</section>
+
+<!-- =====================
+     PROYECTOS
+===================== -->
+<section id="proyectos" class="section">
+  <h2 class="section-title">Proyectos</h2>
+
+  <div class="projects">
+
+    <!-- TO DO LIST -->
+    <div class="project-card">
+      <h3>To-Do List</h3>
+      <p>Herramienta simple para organizar tareas con fecha y hora.</p>
+
+      <div class="todo-container">
+        <div class="input-container">
+          <input type="text" id="taskInput" placeholder="Escribí una tarea">
+          <input type="date" id="taskDate">
+          <input type="time" id="taskTime">
+          <button id="addBtn">Agregar</button>
+        </div>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+
+    <!-- PRESUPUESTOS -->
+    <div class="project-card">
+      <h3>Calculadora de presupuestos</h3>
+      <p>Herramienta básica para calcular costos e IVA.</p>
+
+      <div class="budget-container">
+        <input type="number" id="productPrice" placeholder="Precio unitario">
+        <input type="number" id="quantity" placeholder="Cantidad">
+        <input type="number" id="tax" placeholder="IVA (%)">
+        <button id="calculateBtn">Calcular</button>
+        <button id="clearBtn">Limpiar</button>
+
+        <p>Total: <span id="totalCost">0</span></p>
+        <p>IVA: <span id="taxAmount">0</span></p>
+        <p>Total con IVA: <span id="totalWithTax">0</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================
+     CONTACTO
+===================== -->
+<section id="contacto" class="section">
+  <h2 class="section-title">Contacto</h2>
+
+  <p>📧 <a href="mailto:nicolasaguilera7914@gmail.com">nicolasaguilera7914@gmail.com</a></p>
+  <p>💼 <a href="https://www.linkedin.com/in/leandro-nicolas-aguilera-danese-78b485176" target="_blank">LinkedIn</a></p>
+</section>
+
+<footer>
+  <p>© 2025 – Nico Aguilera</p>
+</footer>
+
+<!-- Scripts -->
+<script src="todo.js"></script>
+<script src="budget.js"></script>
+
 </body>
 </html>
