@@ -13,10 +13,10 @@ h1, h2, h3 {
   font-family: 'Press Start 2P', cursive;
 }
 
-/* Título principal */
+/* ===== Header ===== */
 header h1 {
   font-size: 32px;
-  margin: 0;
+  margin: 10px 0;
   color: #f3e304;
   text-shadow:
     0 0 5px #8a2be2,
@@ -27,7 +27,14 @@ header h1 {
   text-align: center;
 }
 
-/* Secciones h2 con neón amarillo */
+/* ===== Secciones ===== */
+section {
+  padding: 30px 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ===== Títulos de sección ===== */
 section h2 {
   font-size: 1.3em;
   margin-bottom: 20px;
@@ -66,13 +73,6 @@ nav a:hover {
   text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
 }
 
-/* ===== Secciones ===== */
-section {
-  padding: 30px 15px;
-  max-width: 900px;
-  margin: auto;
-}
-
 /* ===== Sobre mí ===== */
 .sobre-mi-container {
   display: flex;
@@ -83,7 +83,6 @@ section {
 
 .sobre-mi-foto {
   width: 150px;
-  height: auto;
   border-radius: 10px;
   border: 2px solid #00ff99;
   box-shadow: 0 0 10px #00ff99;
@@ -92,37 +91,55 @@ section {
 .sobre-mi-list {
   list-style: none;
   padding: 0;
-  flex: 1 1 200px;
+  flex: 1;
 }
 
 .sobre-mi-list li {
   background: #1a1a1a;
-  margin: 5px 0;
+  margin: 6px 0;
   padding: 10px;
   border-left: 4px solid #00ff99;
   font-size: 14px;
 }
 
-/* ===== Experiencia y Qué podés pedirme ===== */
-#experiencia ul,
+/* ===== Experiencia ===== */
+#experiencia ul {
+  list-style: none;
+  padding: 0;
+}
+
+#experiencia li {
+  background: #1a1a1a;
+  margin: 6px 0;
+  padding: 10px;
+  border-left: 4px solid #00ff99;
+}
+
+/* ===== Qué podés pedirme (Servicios / Freelance) ===== */
 #ofrezco ul {
   list-style: none;
   padding: 0;
 }
 
-#experiencia ul li,
-#ofrezco ul li {
-  background: #1a1a1a;
-  margin: 5px 0;
-  padding: 10px;
+#ofrezco li {
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  margin: 10px 0;
+  padding: 15px;
   border-left: 4px solid #00ff99;
-  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#ofrezco li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
 }
 
 /* ===== Proyectos ===== */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
@@ -132,40 +149,37 @@ section {
   border-radius: 12px;
   border: 2px solid #00ff99;
   box-shadow: 0 0 10px #00ff99;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ===== ToDo List dentro de proyecto ===== */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+/* ===== ToDo List ===== */
 .todo-container {
   background: #222;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
   margin-top: 10px;
-  box-shadow: 0 0 10px #00ff99 inset, 0 0 20px #00ff99;
+  box-shadow: inset 0 0 10px #00ff99;
 }
 
 .todo-container .input-container {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 10px;
 }
 
 .todo-container input,
 .todo-container button {
   padding: 8px;
-  border: none;
   border-radius: 5px;
-  outline: none;
-  flex: 1 1 80px;
-  background: #222;
-  color: #fff;
-  box-shadow: 0 0 5px #00ff99 inset;
-  transition: 0.3s;
-}
-
-.todo-container input:focus {
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc inset;
+  border: none;
+  background: #111;
+  color: white;
+  box-shadow: inset 0 0 5px #00ff99;
 }
 
 .todo-container button {
@@ -176,85 +190,36 @@ section {
 
 .todo-container button:hover {
   background: #00e6a0;
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
 }
 
-.todo-container ul {
-  list-style: none;
-  padding: 0;
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-.todo-container li {
-  background: #222;
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.todo-container li.completed {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-.todo-container .deleteBtn {
-  background: red;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  border: none;
-}
-
-/* ===== Calculadora de presupuestos ===== */
+/* ===== Calculadora ===== */
 .budget-container {
   background: #222;
   padding: 15px;
   border-radius: 10px;
   margin-top: 10px;
-  box-shadow: 0 0 10px #00ff99 inset, 0 0 20px #00ff99;
+  box-shadow: inset 0 0 10px #00ff99;
 }
 
 .budget-container input,
-.budget-container select,
 .budget-container button {
+  width: 100%;
   padding: 8px;
   margin: 5px 0;
+  background: #111;
+  color: white;
   border-radius: 5px;
   border: none;
-  outline: none;
-  width: 100%;
-  background: #111;
-  color: #fff;
-  box-shadow: 0 0 5px #00ff99 inset;
 }
 
 .budget-container button {
   background: #00ff99;
   font-weight: bold;
-  cursor: pointer;
-}
-
-.budget-container button:hover {
-  background: #00e6a0;
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-}
-
-.budget-container p {
-  background: #111;
-  padding: 8px;
-  border-radius: 5px;
-  border-left: 4px solid #00ff99;
-  margin: 5px 0;
 }
 
 /* ===== Footer ===== */
 footer {
-  background-color: #1a1a1a;
+  background: #1a1a1a;
   text-align: center;
   padding: 15px;
   font-size: 12px;
@@ -262,6 +227,10 @@ footer {
 
 /* ===== Animaciones ===== */
 @keyframes glow {
-  0% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00; }
-  100% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 60px #ffcc00; }
+  from {
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+  }
+  to {
+    text-shadow: 0 0 10px #ffcc00, 0 0 30px #ffcc00;
+  }
 }
